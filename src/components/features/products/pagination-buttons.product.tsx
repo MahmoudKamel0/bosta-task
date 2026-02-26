@@ -16,10 +16,10 @@ export default function PaginationButtonsProduct({ countPage }: PaginationButton
     const nextPage = pageParams < countPage ? pageParams + 1 : countPage;
 
     return (
-        <Pagination>
+        <Pagination className="mt-12">
             <PaginationContent>
                 <PaginationItem>
-                    <PaginationPrevious href={`/products?page=${previousPage}`} size="sm" />
+                    {pageParams > 1 && <PaginationPrevious href={`/products?page=${previousPage}`} size="sm" />}
                 </PaginationItem>
                 {Array.from({ length: countPage }, (_, index) => index + 1).map((page) => (
                     <PaginationItem key={page}>
@@ -27,7 +27,7 @@ export default function PaginationButtonsProduct({ countPage }: PaginationButton
                     </PaginationItem>
                 ))}
                 <PaginationItem>
-                    <PaginationNext href={`/products?page=${nextPage}`} size="sm" />
+                    {pageParams < countPage && <PaginationNext href={`/products?page=${nextPage}`} size="sm" />}
                 </PaginationItem>
             </PaginationContent>
         </Pagination>

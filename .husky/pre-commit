@@ -1,1 +1,8 @@
-yarn test
+# Run Prettier to auto-format all files before commit
+yarn exec prettier . --write
+
+# Lint the codebase to catch errors early in the commit process
+yarn lint
+
+# Build the project to ensure it compiles successfully prior to commit
+yarn build

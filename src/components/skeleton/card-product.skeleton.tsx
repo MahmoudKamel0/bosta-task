@@ -15,10 +15,10 @@ export default function CardProductSkeleton() {
                 <Skeleton className="size-lg" />
                 <Skeleton className="size-sm" />
                 <div className="flex gap-2">
-                    <Button className="flex-auto rounded-full" asChild>
+                    <Button className="flex-auto" asChild>
                         <Skeleton />
                     </Button>
-                    <Button variant="secondary" className="overflow w-9 rounded-full" asChild>
+                    <Button variant="secondary" className="overflow w-9" asChild>
                         <Skeleton />
                     </Button>
                 </div>
@@ -26,4 +26,3 @@ export default function CardProductSkeleton() {
         </Card>
     );
 }
-

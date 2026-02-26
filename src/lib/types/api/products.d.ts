@@ -7,5 +7,5 @@ export as namespace ProductsApiTypes;
 namespace ProductsApiTypes {
     type TGetAllProducts = z.infer<typeof getAllProductsSchema>;
 
-    type TGetProduct = z.infer<typeof productSchema>
+    type TGetProduct = z.infer<typeof productSchema>;
 }

@@ -28,32 +28,30 @@ const eslintConfig = defineConfig([
             "react-hooks/rules-of-hooks": "error",
             "react-hooks/exhaustive-deps": "warn",
             "jsx-a11y/anchor-is-valid": "error",
-            "import/order": ["error", {
-                "groups": [
-                    "type",
-                    ["builtin", "external"],
-                    "internal",
-                    ["parent", "sibling", "index"],
-                ],
-                "pathGroups": [
-                    {
-                        "pattern": "@components/**",
-                        "group": "internal",
-                        "position": "after",
+            "import/order": [
+                "error",
+                {
+                    groups: ["type", ["builtin", "external"], "internal", ["parent", "sibling", "index"]],
+                    pathGroups: [
+                        {
+                            pattern: "@components/**",
+                            group: "internal",
+                            position: "after",
+                        },
+                        {
+                            pattern: "@styles/**",
+                            group: "index",
+                            position: "after",
+                        },
+                    ],
+                    pathGroupsExcludedImportTypes: ["builtin"],
+                    alphabetize: {
+                        order: "asc",
+                        caseInsensitive: true,
                     },
-                    {
-                        "pattern": "@styles/**",
-                        "group": "index",
-                        "position": "after",
-                    },
-                ],
-                "pathGroupsExcludedImportTypes": ["builtin"],
-                "alphabetize": {
-                    "order": "asc",
-                    "caseInsensitive": true,
+                    warnOnUnassignedImports: false,
                 },
-                "warnOnUnassignedImports": false,
-            }],
+            ],
             "import/no-unresolved": "error",
             "import/no-duplicates": "error",
             "semi": ["error", "always"],

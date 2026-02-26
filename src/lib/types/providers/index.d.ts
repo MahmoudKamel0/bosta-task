@@ -5,6 +5,6 @@ export as namespace ProviderTypes;
 
 namespace ProviderTypes {
     interface IBaseProviderProps {
-        children: ReactNode
+        children: ReactNode;
     }
 }

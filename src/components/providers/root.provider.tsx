@@ -1,4 +1,6 @@
+import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { IBaseProviderProps } from "@lib/types/providers";
+import ReactQueryProviders from "./models/react-query.provider";
 
 /**
  * RootProvider component
@@ -8,5 +10,10 @@ import { IBaseProviderProps } from "@lib/types/providers";
  * @returns {JSX.Element} Rendered children wrapped in a div.
  */
 export default function RootProvider({ children }: Readonly<IBaseProviderProps>) {
-    return <div>{children}</div>;
+    return (
+        <ReactQueryProviders>
+            {children}
+            <ReactQueryDevtools initialIsOpen={false} />
+        </ReactQueryProviders>
+    );
 }
