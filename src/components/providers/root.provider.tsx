@@ -1,5 +1,6 @@
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
 import { IBaseProviderProps } from "@lib/types/providers";
+import { Toaster } from "@components/ui/sonner.ui";
 import ReactQueryProviders from "./models/react-query.provider";
 
 /**
@@ -13,6 +14,7 @@ export default function RootProvider({ children }: Readonly<IBaseProviderProps>)
     return (
         <ReactQueryProviders>
             {children}
+            <Toaster />
             <ReactQueryDevtools initialIsOpen={false} />
         </ReactQueryProviders>
     );

@@ -22,3 +22,14 @@ export const SHIPPING_INFO_PRODUCT_DETAILS = [
         name: "10 - 12 October2024",
     },
 ];
+
+export const getDataDropdownProduct = (categories: string[]) => [
+    {
+        label: "By Price",
+        list: ["price hight", "price low"],
+    },
+    {
+        label: "By category",
+        list: categories,
+    },
+];

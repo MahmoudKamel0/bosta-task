@@ -11,8 +11,9 @@ namespace ProductsTypes {
 
     /** Props for ListProducts, including page count and current page. */
     interface IListProductsProps {
-        countPage: number;
         pageNumber: number;
+        categoryBy?: string;
+        priceBy?: "asc" | "desc";
     }
 
     /** Props for pagination buttons in product lists. */

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { getOneProduct } from "@lib/api/products.api";
+import { getOneFakeApiProduct } from "@lib/api/products-fake-api.api";
 import DetailsProduct from "@components/features/product-details/details.product-details";
 
 /**
@@ -12,7 +12,7 @@ import DetailsProduct from "@components/features/product-details/details.product
  */
 export default async function ProductDetails({ params }: { params: { id: string } }) {
     const { id } = await params;
-    const product = await getOneProduct(+id);
+    const product = await getOneFakeApiProduct(+id);
 
     return (
         <div className="relative flex min-h-screen flex-col gap-10 p-10 md:flex-row">

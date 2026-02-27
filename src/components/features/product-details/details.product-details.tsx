@@ -1,4 +1,5 @@
-import { Banknote } from "lucide-react";
+import { Banknote, ChevronLeft } from "lucide-react";
+import Link from "next/link";
 import { IDetailsProductProps } from "@lib/types/ui/product";
 import { Badge } from "@components/ui/badge.ui";
 import { Button } from "@components/ui/button.ui";
@@ -13,8 +14,10 @@ import ShippingInformationProductDetails from "./shipping-information.product-de
 export default function DetailsProduct({ product }: IDetailsProductProps) {
     return (
         <section id="details-product" className="flex w-1/2 flex-col gap-6 text-sm text-zinc-600">
-            <Button variant="outline" className="w-fit">
-                Back to Products
+            <Button variant="outline" asChild>
+                <Link href="/products" className="flex w-fit items-center gap-2 text-xs">
+                    <ChevronLeft size="15" /> Back to Products
+                </Link>
             </Button>
 
             {/* Display product category as a badge */}

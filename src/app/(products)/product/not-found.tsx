@@ -1,5 +1,12 @@
 import BackButtonToLastPage from "@components/shared/back-button-to last-page.shared";
 
+/**
+ * Not Found page for individual product routes.
+ *
+ * Displays a user-friendly message when the requested product page cannot be found.
+ *
+ * @returns {JSX.Element} The rendered not found page.
+ */
 export default function NotfoundProductPage() {
     return (
         <section id="notfound-product" className="flex h-screen flex-col items-center justify-center">

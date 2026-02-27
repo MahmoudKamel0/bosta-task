@@ -1,5 +1,5 @@
 import { HydrationBoundary, QueryClient, dehydrate } from "@tanstack/react-query";
-import { notFound, redirect } from "next/navigation";
+import { redirect } from "next/navigation";
 import { getAllProducts } from "@lib/api/products.api";
 import { PRODUCT_PAGE_METADATA } from "@lib/seo/product.seo";
 import ListProducts from "@components/features/products/list.product";
@@ -13,8 +13,12 @@ export const metadata = PRODUCT_PAGE_METADATA;
  * @param {ProductPageProps} props - The component props containing searchParams.
  * @returns {Promise<JSX.Element>} The rendered product list or a redirect/404.
  */
-export default async function ProductPage({ searchParams }: { searchParams: Promise<{ page: string }> }) {
-    const { page } = await searchParams;
+export default async function ProductPage({
+    searchParams,
+}: {
+    searchParams: Promise<{ page: string; categoryBy: string; priceBy: string }>;
+}) {
+    const { page, categoryBy, priceBy } = await searchParams;
     const pageNumber = Number.parseInt(page); // for don't write floating number or if user write words return NaN
 
     // If pageNumber is invalid or less than 1, redirect to the first page
@@ -22,23 +26,16 @@ export default async function ProductPage({ searchParams }: { searchParams: Prom
         redirect("/products?page=1");
     }
 
-    const { countPage } = await getAllProducts(pageNumber);
-
-    // Show 404 page if pageNumber is greater than highest page or is not a valid number
-    if (pageNumber > countPage || Number.isNaN(pageNumber)) {
-        notFound();
-    }
-
     const queryClient = new QueryClient();
 
     await queryClient.prefetchQuery({
-        queryKey: ["products", pageNumber],
-        queryFn: () => getAllProducts(pageNumber),
+        queryKey: ["products", pageNumber, categoryBy, priceBy],
+        queryFn: () => getAllProducts(pageNumber, categoryBy, priceBy as "asc" | "desc" | undefined),
     });
 
     return (
         <HydrationBoundary state={dehydrate(queryClient)}>
-            <ListProducts countPage={countPage} pageNumber={pageNumber} />
+            <ListProducts pageNumber={pageNumber} categoryBy={categoryBy ?? ""} priceBy={priceBy as "asc" | "desc" | undefined} />
         </HydrationBoundary>
     );
 }
