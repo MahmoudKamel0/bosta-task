@@ -45,7 +45,7 @@ export default function FilterDropdownProduct() {
                         By category <ChevronDown size="15" />
                     </DropdownMenuTrigger>
                     <DropdownMenuContent>
-                        {data.categories.map((item) => (
+                        {data.categories.map((item: string) => (
                             <DropdownMenuItem key={item} onClick={() => categoryFilter(item)}>
                                 {item}
                             </DropdownMenuItem>
