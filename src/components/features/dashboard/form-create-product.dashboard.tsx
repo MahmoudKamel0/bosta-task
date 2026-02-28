@@ -40,6 +40,7 @@ export default function FormCreateProductDashboard() {
         formState: { errors, isValid, isSubmitting },
     } = useForm<TCreateProduct>({
         defaultValues: {
+            id: 0,
             title: "",
             price: 1,
             description: "",
@@ -64,6 +65,8 @@ export default function FormCreateProductDashboard() {
             })}
             className="grid w-full grid-cols-2 gap-10 rounded-lg border border-zinc-100 p-10"
         >
+            <p>{errors.id?.message}</p>
+            <p>{errors.ra}</p>
             <div className="flex flex-col gap-3">
                 <Label className="capitalize">Title</Label>
                 <Input {...register("title")} placeholder="enter title product" />
