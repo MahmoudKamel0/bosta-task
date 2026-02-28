@@ -2,7 +2,7 @@ import { categoriesSchema } from "@lib/schema/api/categories.schema";
 
 export async function getAllCategories() {
     try {
-        const response = await fetch("https://bosta-task-indol.vercel.app/api/categories", {
+        const response = await fetch(`${process.env.BASE_DOMAIN_API_URL ?? "http://localhost:3000"}/api/categories`, {
             next: { revalidate: 6000 },
         });
         const categories = await response.json();
