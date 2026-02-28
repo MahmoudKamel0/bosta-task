@@ -1,8 +1,12 @@
 import z from "zod";
 
-export const loginSchema = z.object({
-    username: z.string().min(3, "Username required"),
-    password: z.string().min(4, "Password required"),
+export const loginResponseSchema = z.object({
+    token: z.string(),
+});
+
+export const loginRequestSchema = z.object({
+    username: z.string(),
+    password: z.string(),
 });
 
 export const signupResponseSchema = z.object({

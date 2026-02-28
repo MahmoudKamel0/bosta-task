@@ -3,24 +3,22 @@ import { signIn } from "next-auth/react";
 import { toast } from "sonner";
 import { signupAction } from "@lib/actions/auth.action";
 import { TUserSignupRequest } from "@lib/types/api/auth";
-import { TUserBodyDataSignup, TUserDataLogin } from "@lib/types/auth";
+import { TUserBodyDataSignup, TUserBodyDataLogin } from "@lib/types/auth";
 
-export async function handleLogin(data: TUserDataLogin) {
-    const result = await signIn("credentials", {
+export async function handleLogin(data: TUserBodyDataLogin) {
+    const payload = await signIn("credentials", {
         username: data.username,
         password: data.password,
         redirect: false,
     });
 
-    if (!result?.ok) {
+    if (!payload?.ok) {
         toast.error("Invalid username or password");
-        throw new Error("Invalid username or password");
+        return;
     }
 
     toast.success("successfully login");
     redirect("/");
-
-    return result;
 }
 
 export const handlerSignupSubmit = async (data: TUserBodyDataSignup) => {

@@ -6,7 +6,7 @@ import { Button } from "@/components/ui/button.ui";
 import { Field, FieldDescription, FieldGroup, FieldLabel } from "@/components/ui/field.ui";
 import { Input } from "@/components/ui/input.ui";
 import { cn } from "@/lib/utils/helper/cn.util";
-import { signupFormSchema } from "@lib/schema/auth/login.schema";
+import { signupFormSchema } from "@lib/schema/auth/signup.schema";
 import { handlerSignupSubmit } from "@lib/utils/handler/auth.handler";
 
 export function SignupForm({ className, ...props }: React.ComponentProps<"form">) {

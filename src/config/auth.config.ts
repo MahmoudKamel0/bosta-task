@@ -1,6 +1,6 @@
 import type { NextAuthOptions, User } from "next-auth";
 import CredentialsProvider from "next-auth/providers/credentials";
-import { loginUser } from "@/lib/api/auth.api";
+import { postLoginUser } from "@/lib/api/auth.api";
 
 export const authOptions: NextAuthOptions = {
     pages: {
@@ -23,7 +23,7 @@ export const authOptions: NextAuthOptions = {
                 if (!credentials) return null;
 
                 try {
-                    const data = await loginUser({
+                    const data = await postLoginUser({
                         username: credentials.username,
                         password: credentials.password,
                     });

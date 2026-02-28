@@ -6,7 +6,7 @@ export = AuthTypes;
 export as namespace AuthTypes;
 
 namespace AuthTypes {
-    type TUserDataLogin = z.infer<typeof loginFormSchema>;
+    type TUserBodyDataLogin = z.infer<typeof loginFormSchema>;
 
     type TUserBodyDataSignup = z.infer<typeof signupFormSchema>;
 }

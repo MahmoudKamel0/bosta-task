@@ -4,7 +4,6 @@ import { useRouter } from "next/navigation";
 import { Button } from "@components/ui/button.ui";
 
 export default function BackButtonToLastPage() {
-    "use client";
     const router = useRouter();
 
     return (

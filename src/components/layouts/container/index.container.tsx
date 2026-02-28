@@ -10,5 +10,5 @@ import { cn } from "@lib/utils/helper/cn.util";
  * @returns {JSX.Element} The rendered container with children.
  */
 export default function ContainerLayout({ children, className }: Readonly<IContainerLayoutProps>) {
-    return <div className={cn("container mx-auto", className)}>{children}</div>;
+    return <div className={cn("container mx-auto px-10", className)}>{children}</div>;
 }

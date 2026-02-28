@@ -15,10 +15,10 @@ export default async function ProductDetails({ params }: { params: { id: string 
     const product = await getOneFakeApiProduct(+id);
 
     return (
-        <div className="relative flex min-h-screen flex-col gap-10 p-10 md:flex-row">
+        <div className="flex min-h-screen flex-col gap-10 p-10 md:flex-row">
             {/* Show product image */}
-            <div className="cover | h-full w-1/2 rounded-xl md:sticky md:top-0 md:left-0 md:h-[600px]">
-                <Image className="object-contain p-10" src={product.image} alt={product.title} fill />
+            <div className="cover | relative h-[600px] w-full rounded-xl md:sticky md:top-0 md:left-0 md:w-1/2">
+                <Image className="object-contain md:p-10" src={product.image} alt={product.title} fill />
             </div>
 
             {/* Show detailed product info */}

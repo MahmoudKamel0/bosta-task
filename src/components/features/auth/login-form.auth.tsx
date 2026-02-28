@@ -38,7 +38,7 @@ export default function LoginFormAuth({ className, ...props }: ComponentProps<"f
 
                 {/* This section is reserved for rendering email validation errors. */}
                 <Field>
-                    <FieldLabel htmlFor="email">Email</FieldLabel>
+                    <FieldLabel htmlFor="username">Username</FieldLabel>
                     <Input id="username" placeholder="m@example.com" {...register("username")} />
                 </Field>
 
