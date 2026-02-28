@@ -8,6 +8,7 @@
         "start": "next start",
         "lint": "eslint",
         "test": "vitest",
+        "cypress:open": "cypress open",
         "prepare": "husky"
     },
     "dependencies": {

@@ -5,6 +5,12 @@
 
 @custom-variant dark (&:is(.dark *));
 
+@utility scrollbar-hidden {
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
 @theme inline {
     --color-background: var(--background);
     --color-foreground: var(--foreground);

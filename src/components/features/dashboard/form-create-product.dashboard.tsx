@@ -5,7 +5,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useMutation, useQuery, useQueryClient } from "@tanstack/react-query";
 import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
-import { createProductAction } from "@lib/actions/creat-product.action";
+import { createProductAction } from "@lib/actions/create-product.action";
 import { getAllCategories } from "@lib/api/categories.api";
 import { createProductSchema } from "@lib/schema/api/products.schema";
 import { Button } from "@components/ui/button.ui";

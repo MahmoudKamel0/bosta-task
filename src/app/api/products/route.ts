@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { createFakeApiProduct, getAllFakeApiProducts } from "@lib/api/products-fake-api.api";
-import { sortProductsByPriceAndCategory } from "@lib/utils/features/sorting.product";
+import { sortProductsByPriceAndCategory } from "@lib/utils/features/product.util";
 
 export async function GET(request: Request) {
     const PAGE_SIZE = 8; //=> count products display in every page
