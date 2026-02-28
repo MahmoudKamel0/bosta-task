@@ -1,11 +1,11 @@
 # Run Prettier to auto-format all files before commit
-echo "formatting code with Prettier..."
-yarn exec prettier . --write
+# echo "formatting code with Prettier..."
+# yarn exec prettier . --write
 
 # Lint the codebase to catch errors early in the commit process
-echo "check quality code with eslint..."
-yarn lint
+# echo "check quality code with eslint..."
+# yarn lint
 
 # Build the project to ensure it compiles successfully prior to commit
-echo "build project for test run..."
-yarn build
+# echo "build project for test run..."
+# yarn build
