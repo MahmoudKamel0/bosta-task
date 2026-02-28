@@ -1,5 +1,3 @@
-"use server";
-
 import { createProduct } from "@lib/api/products.api";
 import { TGetProduct } from "@lib/types/api/products";
 
