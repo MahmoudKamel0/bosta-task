@@ -1,4 +1,3 @@
-import { loginResponseSchema, signupResponseSchema } from "@lib/schema/api/auth.schema";
 import { TUserLoginRequest, TUserSignupRequest } from "@lib/types/api/auth";
 
 export async function postLoginUser(data: TUserLoginRequest) {
@@ -17,7 +16,8 @@ export async function postLoginUser(data: TUserLoginRequest) {
 
         const payload = await response.json();
 
-        return loginResponseSchema.parse(payload);
+        // return loginResponseSchema.parse(payload);
+        return payload;
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
         throw new Error("Something went wrong during signup. Please try again later.");
@@ -37,5 +37,6 @@ export async function postSignupUser(user: TUserSignupRequest) {
     }
 
     const payload = await response.json();
-    return signupResponseSchema.parse(payload);
+    // return signupResponseSchema.parse(payload);
+    return payload;
 }

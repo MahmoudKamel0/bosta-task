@@ -89,7 +89,7 @@ export default function FormCreateProductDashboard() {
                             </SelectTrigger>
 
                             <SelectContent>
-                                {data?.categories.map((item) => (
+                                {data?.categories.map((item: string) => (
                                     <SelectItem key={item} value={item} className="text-sm">
                                         {item}
                                     </SelectItem>

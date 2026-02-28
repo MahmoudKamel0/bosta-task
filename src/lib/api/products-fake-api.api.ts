@@ -1,4 +1,3 @@
-import { getAllProductsFakeApiSchema, productSchema } from "@lib/schema/api/products.schema";
 import { TCreateProduct } from "@lib/types/api/products";
 
 /**
@@ -15,7 +14,8 @@ export async function getAllFakeApiProducts() {
         });
         const products = await response.json();
 
-        return getAllProductsFakeApiSchema.parse(products);
+        // return getAllProductsFakeApiSchema.parse(products);
+        return products;
 
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
@@ -35,7 +35,8 @@ export async function getOneFakeApiProduct(id: number) {
             next: { revalidate: 6000 },
         });
         const product = await response.json();
-        return productSchema.parse(product);
+        // return productSchema.parse(product);
+        return product;
 
         // eslint-disable-next-line @typescript-eslint/no-unused-vars
     } catch (error) {
